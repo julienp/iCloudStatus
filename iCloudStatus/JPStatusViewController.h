@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JPViewController : UITableViewController
+@interface JPStatusViewController : UITableViewController
 
 @end

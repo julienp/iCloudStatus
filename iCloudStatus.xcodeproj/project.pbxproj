@@ -20,9 +20,14 @@
 		F9DB0C29167B471900E66EEF /* JPICloudStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0C28167B471900E66EEF /* JPICloudStatus.m */; };
 		F9DB0C30167B4F2300E66EEF /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C2E167B4F2300E66EEF /* down.png */; };
 		F9DB0C31167B4F2300E66EEF /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C2F167B4F2300E66EEF /* up.png */; };
-		F9DB0C34167B511A00E66EEF /* JPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0C33167B511A00E66EEF /* JPViewController.m */; };
+		F9DB0C34167B511A00E66EEF /* JPStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0C33167B511A00E66EEF /* JPStatusViewController.m */; };
 		F9DB0C36167B5F4300E66EEF /* status.json in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C35167B5F4300E66EEF /* status.json */; };
 		F9DB0C3A167B630700E66EEF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C39167B630700E66EEF /* icon.png */; };
+		F9DB0C3E167B64E100E66EEF /* 234-cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C3C167B64E100E66EEF /* 234-cloud.png */; };
+		F9DB0C3F167B64E100E66EEF /* 234-cloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C3D167B64E100E66EEF /* 234-cloud@2x.png */; };
+		F9DB0C42167B651300E66EEF /* 11-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C40167B651300E66EEF /* 11-clock.png */; };
+		F9DB0C43167B651300E66EEF /* 11-clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C41167B651300E66EEF /* 11-clock@2x.png */; };
+		F9DB0C46167B65E000E66EEF /* JPTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0C45167B65E000E66EEF /* JPTimelineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +49,16 @@
 		F9DB0C28167B471900E66EEF /* JPICloudStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPICloudStatus.m; sourceTree = "<group>"; };
 		F9DB0C2E167B4F2300E66EEF /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
 		F9DB0C2F167B4F2300E66EEF /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
-		F9DB0C32167B511A00E66EEF /* JPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPViewController.h; sourceTree = "<group>"; };
-		F9DB0C33167B511A00E66EEF /* JPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPViewController.m; sourceTree = "<group>"; };
+		F9DB0C32167B511A00E66EEF /* JPStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPStatusViewController.h; sourceTree = "<group>"; };
+		F9DB0C33167B511A00E66EEF /* JPStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPStatusViewController.m; sourceTree = "<group>"; };
 		F9DB0C35167B5F4300E66EEF /* status.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = status.json; sourceTree = "<group>"; };
 		F9DB0C39167B630700E66EEF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		F9DB0C3C167B64E100E66EEF /* 234-cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "234-cloud.png"; sourceTree = "<group>"; };
+		F9DB0C3D167B64E100E66EEF /* 234-cloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "234-cloud@2x.png"; sourceTree = "<group>"; };
+		F9DB0C40167B651300E66EEF /* 11-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock.png"; sourceTree = "<group>"; };
+		F9DB0C41167B651300E66EEF /* 11-clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock@2x.png"; sourceTree = "<group>"; };
+		F9DB0C44167B65E000E66EEF /* JPTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTimelineViewController.h; sourceTree = "<group>"; };
+		F9DB0C45167B65E000E66EEF /* JPTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTimelineViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +108,10 @@
 				F9DB0C13167B46E600E66EEF /* JPAppDelegate.h */,
 				F9DB0C14167B46E600E66EEF /* JPAppDelegate.m */,
 				F9DB0C1C167B46E700E66EEF /* MainStoryboard.storyboard */,
-				F9DB0C32167B511A00E66EEF /* JPViewController.h */,
-				F9DB0C33167B511A00E66EEF /* JPViewController.m */,
+				F9DB0C32167B511A00E66EEF /* JPStatusViewController.h */,
+				F9DB0C33167B511A00E66EEF /* JPStatusViewController.m */,
+				F9DB0C44167B65E000E66EEF /* JPTimelineViewController.h */,
+				F9DB0C45167B65E000E66EEF /* JPTimelineViewController.m */,
 				F9DB0C27167B471900E66EEF /* JPICloudStatus.h */,
 				F9DB0C28167B471900E66EEF /* JPICloudStatus.m */,
 				F9DB0C0B167B46E600E66EEF /* Supporting Files */,
@@ -109,10 +122,8 @@
 		F9DB0C0B167B46E600E66EEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F9DB0C39167B630700E66EEF /* icon.png */,
+				F9DB0C3B167B64CE00E66EEF /* icons */,
 				F9DB0C35167B5F4300E66EEF /* status.json */,
-				F9DB0C2E167B4F2300E66EEF /* down.png */,
-				F9DB0C2F167B4F2300E66EEF /* up.png */,
 				F9DB0C0C167B46E600E66EEF /* iCloudStatus-Info.plist */,
 				F9DB0C0D167B46E600E66EEF /* InfoPlist.strings */,
 				F9DB0C10167B46E600E66EEF /* main.m */,
@@ -122,6 +133,20 @@
 				F9DB0C1A167B46E700E66EEF /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9DB0C3B167B64CE00E66EEF /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				F9DB0C39167B630700E66EEF /* icon.png */,
+				F9DB0C2E167B4F2300E66EEF /* down.png */,
+				F9DB0C2F167B4F2300E66EEF /* up.png */,
+				F9DB0C3C167B64E100E66EEF /* 234-cloud.png */,
+				F9DB0C3D167B64E100E66EEF /* 234-cloud@2x.png */,
+				F9DB0C40167B651300E66EEF /* 11-clock.png */,
+				F9DB0C41167B651300E66EEF /* 11-clock@2x.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +210,10 @@
 				F9DB0C31167B4F2300E66EEF /* up.png in Resources */,
 				F9DB0C36167B5F4300E66EEF /* status.json in Resources */,
 				F9DB0C3A167B630700E66EEF /* icon.png in Resources */,
+				F9DB0C3E167B64E100E66EEF /* 234-cloud.png in Resources */,
+				F9DB0C3F167B64E100E66EEF /* 234-cloud@2x.png in Resources */,
+				F9DB0C42167B651300E66EEF /* 11-clock.png in Resources */,
+				F9DB0C43167B651300E66EEF /* 11-clock@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +227,8 @@
 				F9DB0C11167B46E600E66EEF /* main.m in Sources */,
 				F9DB0C15167B46E600E66EEF /* JPAppDelegate.m in Sources */,
 				F9DB0C29167B471900E66EEF /* JPICloudStatus.m in Sources */,
-				F9DB0C34167B511A00E66EEF /* JPViewController.m in Sources */,
+				F9DB0C34167B511A00E66EEF /* JPStatusViewController.m in Sources */,
+				F9DB0C46167B65E000E66EEF /* JPTimelineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

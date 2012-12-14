@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Julien Poissonnier. All rights reserved.
 //
 
-#import "JPViewController.h"
+#import "JPStatusViewController.h"
 #import "JPICloudStatus.h"
 
 @interface JPServiceStatus : NSObject
@@ -17,12 +17,12 @@
 @implementation JPServiceStatus
 @end
 
-@interface JPViewController ()
+@interface JPStatusViewController ()
 @property (nonatomic, strong) NSDictionary *groups;
 @property (nonatomic, strong) NSArray *groupNames;
 @end
 
-@implementation JPViewController
+@implementation JPStatusViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
