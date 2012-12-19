@@ -95,9 +95,9 @@ typedef void (^JPCompletionBlock)(NSDictionary *data, NSError *error);
                     }
                     [statusArray addObject:status];
                 }
-                //TODO: caseInsentive sort
-                NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"service" ascending:YES];
-                [statusArray sortUsingDescriptors:@[ descriptor ]];
+                [statusArray sortUsingComparator:^NSComparisonResult(JPServiceStatus *stat1, JPServiceStatus *stat2) {
+                    return [stat1.service localizedCaseInsensitiveCompare:stat2.service];
+                }];
                 statusesDictionary[serviceName] = statusArray;
             }
             self.statuses = statusesDictionary;
