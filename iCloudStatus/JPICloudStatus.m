@@ -12,7 +12,6 @@
 
 - (void)fetchStatus:(JPCompletionBlock)completionBlock
 {
-
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *urlString = @"http://www.apple.com/support/systemstatus/data/system_status_en_US.js";
         NSURL *url = [NSURL URLWithString:urlString];
@@ -21,7 +20,7 @@
         NSError *error;
         NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         if (data) {
-//            NSString *path = [[NSBundle mainBundle] pathForResource:@"status" ofType:@"json"];
+//            NSString *path = [[NSBundle mainBundle] pathForResource:@"status_error" ofType:@"json"];
 //            NSData *dummyData = [NSData dataWithContentsOfFile:path];
 //            data = dummyData;
             NSError *jsonError;

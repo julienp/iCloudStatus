@@ -8,4 +8,6 @@ Released under the MIT License, see LICENSE.txt
 
 ## Todo ##
 
-Pull the JSON parsing out of the view controllers into JPICloudStatus.
+Pull the JSON parsing out of the view controllers into JPICloudStatus, building proper model objects for the services and issues.
+
+DetailView for issues, selecting a row in one of the table views should take you to there.

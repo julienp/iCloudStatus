@@ -11,7 +11,7 @@
 
 @interface JPServiceStatus : NSObject
 @property (nonatomic, strong) NSString *service;
-@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSArray *errors;
 @end
 
 @implementation JPServiceStatus
@@ -67,16 +67,16 @@
             for (NSString *group in [dashboard allKeys]) {
                 NSMutableArray *statuses = [[NSMutableArray alloc] init];
                 for (NSString *service in [dashboard[group] allKeys]) {
-                    NSArray *messages = dashboard[group][service];
+                    NSArray *errors = dashboard[group][service];
                     JPServiceStatus *status = [[JPServiceStatus alloc] init];
                     status.service = service;
-                    if (messages.count > 0) {
-                        status.message = [messages componentsJoinedByString:@", "];
+                    if (errors.count > 0) {
+                        status.errors = errors;
                     }
                     [statuses addObject:status];
                 }
 
-                NSSortDescriptor *descriptor1 = [NSSortDescriptor sortDescriptorWithKey:@"message" ascending:YES];
+                NSSortDescriptor *descriptor1 = [NSSortDescriptor sortDescriptorWithKey:@"errors" ascending:YES];
                 NSSortDescriptor *descriptor2 = [NSSortDescriptor sortDescriptorWithKey:@"service" ascending:YES];
                 [statuses sortUsingDescriptors:@[ descriptor1, descriptor2 ]];
                 groups[group] = statuses;
@@ -103,7 +103,7 @@
         for (NSString *groupName in self.groupNames) {
             for (int i=0; i<[self.groups[groupName] count]; i++) {
                 JPServiceStatus *status = self.groups[groupName][i];
-                if (status.message) {
+                if (status.errors) {
                     issue = [NSIndexPath indexPathForRow:i inSection:[self.groupNames indexOfObject:groupName]];
                     break;
                 }
@@ -141,8 +141,10 @@
     JPServiceStatus *status = self.groups[key][indexPath.row];
     cell.textLabel.text = status.service;
     cell.imageView.contentMode = UIViewContentModeCenter;
-    if (status.message) {
-        cell.detailTextLabel.text = status.message;
+    if (status.errors.count > 0) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",
+                                     status.errors[0][@"statusType"],
+                                     status.errors[0][@"usersAffected"]];
         cell.imageView.image = [UIImage imageNamed:@"down.png"];
     } else {
         cell.detailTextLabel.text = nil;
