@@ -34,7 +34,6 @@ NSString * const JPStatusUpdatedNotification = @"JPStatusUpdatedNotification";
 
 @interface JPICloudStatus ()
 
-@property (nonatomic, strong) NSArray *sections;
 @property (nonatomic, strong) NSDictionary *statuses;
 @property (nonatomic, strong) NSArray *events;
 
@@ -101,8 +100,6 @@ typedef void (^JPCompletionBlock)(NSDictionary *data, NSError *error);
                 [statusArray sortUsingDescriptors:@[ descriptor ]];
                 statusesDictionary[serviceName] = statusArray;
             }
-            self.sections = serviceNames;
-            [self.sections sortedArrayUsingSelector:@selector(localizedCompare:)];
             self.statuses = statusesDictionary;
             [[NSNotificationCenter defaultCenter] postNotificationName:JPStatusUpdatedNotification object:self];
         } else {

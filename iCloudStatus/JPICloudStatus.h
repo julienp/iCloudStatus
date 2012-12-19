@@ -33,7 +33,6 @@ extern NSString * const JPStatusUpdatedNotification;
 
 @interface JPICloudStatus : NSObject
 
-@property (nonatomic, strong, readonly) NSArray *sections; //sorted list of sectionNames
 @property (nonatomic, strong, readonly) NSDictionary *statuses; //dictionary of sectionName -> array of JPServiceStatus
 @property (nonatomic, strong, readonly) NSArray *events;
 

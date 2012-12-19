@@ -55,8 +55,8 @@
 
 - (void)update
 {
-    self.sections = [JPICloudStatus sharedICloudStatus].sections;
     self.statuses = [JPICloudStatus sharedICloudStatus].statuses;
+    self.sections = [[self.statuses allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     [self.refreshControl endRefreshing];
     [self.tableView reloadData];
     
