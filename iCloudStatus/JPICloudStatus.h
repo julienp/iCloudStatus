@@ -22,6 +22,8 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, assign) NSInteger messageId;
+@property (nonatomic, strong) NSString *usersAffected;
+@property (nonatomic, strong) NSString *statusType;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
 

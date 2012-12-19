@@ -58,16 +58,28 @@ typedef void (^JPCompletionBlock)(NSDictionary *data, NSError *error);
 - (void)update
 {
     [self fetchStatus:^(NSDictionary *json, NSError *error) {
+
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"MM/dd/yyyy HH:mm z";
+
         if (json) {
             NSArray *eventsJson = json[@"detailedTimeline"];
             NSMutableArray *events = [[NSMutableArray alloc] init];
             for (NSDictionary *eventJson in eventsJson) {
                 JPEvent *event = [[JPEvent alloc] init];
                 event.title = eventJson[@"messageTitle"];
-                event.message = eventJson[@"message"];
+                event.message = [eventJson[@"message"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                 event.messageId = [eventJson[@"messageId"] integerValue];
+                event.usersAffected = eventJson[@"usersAffected"];
+                event.statusType = eventJson[@"statusType"];
+                event.startDate = [dateFormatter dateFromString:eventJson[@"startDate"]];
+                if (eventJson[@"endDate"]) {
+                    event.endDate = [dateFormatter dateFromString:eventJson[@"endDate"]];
+                }
                 [events addObject:event];
             }
+            NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES];
+            [events sortUsingDescriptors:@[ descriptor ]];
             self.events = events;
 
             NSArray *serviceNames = [json[@"dashboard"] allKeys];
