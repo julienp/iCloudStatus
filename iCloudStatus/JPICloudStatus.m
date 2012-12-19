@@ -125,9 +125,12 @@ typedef void (^JPCompletionBlock)(NSDictionary *data, NSError *error);
         NSError *error;
         NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         if (data) {
-//            NSString *path = [[NSBundle mainBundle] pathForResource:@"status_error" ofType:@"json"];
-//            NSData *dummyData = [NSData dataWithContentsOfFile:path];
-//            data = dummyData;
+//#define DUMMYDATA
+#ifdef DUMMYDATA
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"status_error" ofType:@"json"];
+            NSData *dummyData = [NSData dataWithContentsOfFile:path];
+            data = dummyData;
+#endif
             NSError *jsonError;
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
             if (json) {
