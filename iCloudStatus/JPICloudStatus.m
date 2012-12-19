@@ -16,7 +16,7 @@ NSString * const JPStatusUpdatedNotification = @"JPStatusUpdatedNotification";
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"JPEvent<%@: %@>", self.title, self.message];
+    return [NSString stringWithFormat:@"JPEvent<%p: %@>", self, self.title];
 }
 
 @end
@@ -26,7 +26,7 @@ NSString * const JPStatusUpdatedNotification = @"JPStatusUpdatedNotification";
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"JPServiceStatus<%@: %@>", self.service, self.events];
+    return [NSString stringWithFormat:@"JPServiceStatus<%p: %@, %@>", self, self.service, self.events];
 }
 
 @end
@@ -38,9 +38,6 @@ NSString * const JPStatusUpdatedNotification = @"JPStatusUpdatedNotification";
 @property (nonatomic, strong) NSArray *events;
 
 @end
-
-
-typedef void (^JPCompletionBlock)(NSDictionary *data, NSError *error);
 
 
 @implementation JPICloudStatus
@@ -127,7 +124,7 @@ typedef void (^JPCompletionBlock)(NSDictionary *data, NSError *error);
     }];
 }
 
-- (void)fetchStatus:(JPCompletionBlock)completionBlock
+- (void)fetchStatus:(void (^)(NSDictionary *json, NSError *error))completionBlock
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *urlString = @"http://www.apple.com/support/systemstatus/data/system_status_en_US.js";

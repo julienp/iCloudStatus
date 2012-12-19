@@ -12,7 +12,7 @@
 @interface JPServiceStatus : NSObject
 
 @property (nonatomic, strong) NSString *service;
-@property (nonatomic, strong) NSArray *events; //array of JPEvents
+@property (nonatomic, strong) NSArray *events;
 
 @end
 
