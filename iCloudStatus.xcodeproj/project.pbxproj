@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F9D753241681DB0700973EA3 /* status_error.json in Sources */ = {isa = PBXBuildFile; fileRef = F9D753231681DB0700973EA3 /* status_error.json */; };
 		F9D753261681DBE500973EA3 /* status_error.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D753231681DB0700973EA3 /* status_error.json */; };
 		F9DB0C05167B46E600E66EEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DB0C04167B46E600E66EEF /* UIKit.framework */; };
 		F9DB0C07167B46E600E66EEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DB0C06167B46E600E66EEF /* Foundation.framework */; };
@@ -234,7 +233,6 @@
 				F9DB0C29167B471900E66EEF /* JPICloudStatus.m in Sources */,
 				F9DB0C34167B511A00E66EEF /* JPStatusViewController.m in Sources */,
 				F9DB0C46167B65E000E66EEF /* JPTimelineViewController.m in Sources */,
-				F9D753241681DB0700973EA3 /* status_error.json in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

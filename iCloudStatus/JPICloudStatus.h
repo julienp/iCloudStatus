@@ -8,10 +8,36 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^JPCompletionBlock)(NSDictionary *data, NSError *error);
+
+@interface JPServiceStatus : NSObject
+
+@property (nonatomic, strong) NSString *service;
+@property (nonatomic, strong) NSArray *events; //array of JPEvents
+
+@end
+
+
+@interface JPEvent : NSObject
+
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, assign) NSInteger messageId;
+@property (nonatomic, strong) NSDate *startDate;
+@property (nonatomic, strong) NSDate *endDate;
+
+@end
+
+
+extern NSString * const JPStatusUpdatedNotification;
+
 
 @interface JPICloudStatus : NSObject
 
-- (void)fetchStatus:(JPCompletionBlock)completionBlock;
+@property (nonatomic, strong, readonly) NSArray *sections; //sorted list of sectionNames
+@property (nonatomic, strong, readonly) NSDictionary *statuses; //dictionary of sectionName -> array of JPServiceStatus
+@property (nonatomic, strong, readonly) NSArray *events;
+
++ (JPICloudStatus *)sharedICloudStatus;
+- (void)update;
 
 @end

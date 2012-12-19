@@ -9,19 +9,6 @@
 #import "JPTimelineViewController.h"
 #import "JPICloudStatus.h"
 
-@interface JPEvent : NSObject
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *message;
-@property (nonatomic, strong) NSDate *startDate;
-@property (nonatomic, strong) NSDate *endDate;
-@end
-
-@implementation JPEvent
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@: %@", self.title, self.message];
-}
-@end
 
 @interface JPTimelineViewController ()
 @property (nonatomic, strong) NSArray *events;
@@ -42,18 +29,22 @@
 {
     [super viewDidLoad];
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    [refresh addTarget:self action:@selector(update) forControlEvents:UIControlEventValueChanged];
+    [refresh addTarget:self action:@selector(reload:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(update)
                                                  name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(update)
+                                                 name:JPStatusUpdatedNotification
                                                object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self update];
+    [self reload:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,32 +54,14 @@
 
 - (void)update
 {
-    JPICloudStatus *status = [[JPICloudStatus alloc] init];
-    [status fetchStatus:^(NSDictionary *json, NSError *error) {
-        if (json) {
-            NSMutableArray *events = [[NSMutableArray alloc] init];
-            NSDictionary *timeline = json[@"detailedTimeline"];
-            for (NSDictionary *item in timeline) {
-                JPEvent *event = [[JPEvent alloc] init];
-                event.title = item[@"messageTitle"];
-                event.message = item[@"message"];
-                [events addObject:event];
-            }
-            self.events = events;
-            //TODO: sort by start date
-        } else {
-            NSLog(@"Error: %@", error);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:@"Unable to retrieve iCloud status"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-            [alert show];
-            self.events = nil;
-        }
-        [self.refreshControl endRefreshing];
-        [self.tableView reloadData];
-    }];
+    self.events = [JPICloudStatus sharedICloudStatus].events;
+    [self.refreshControl endRefreshing];
+    [self.tableView reloadData];
+}
+
+- (IBAction)reload:(id)sender
+{
+    [[JPICloudStatus sharedICloudStatus] update];
 }
 
 #pragma mark - Table view data source

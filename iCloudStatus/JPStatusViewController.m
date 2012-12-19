@@ -9,17 +9,10 @@
 #import "JPStatusViewController.h"
 #import "JPICloudStatus.h"
 
-@interface JPServiceStatus : NSObject
-@property (nonatomic, strong) NSString *service;
-@property (nonatomic, strong) NSArray *errors;
-@end
-
-@implementation JPServiceStatus
-@end
 
 @interface JPStatusViewController ()
-@property (nonatomic, strong) NSDictionary *groups;
-@property (nonatomic, strong) NSArray *groupNames;
+@property (nonatomic, strong) NSDictionary *statuses;
+@property (nonatomic, strong) NSArray *sections;
 @end
 
 @implementation JPStatusViewController
@@ -37,18 +30,22 @@
 {
     [super viewDidLoad];
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    [refresh addTarget:self action:@selector(update) forControlEvents:UIControlEventValueChanged];
+    [refresh addTarget:self action:@selector(reload:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(update)
                                                  name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(update)
+                                                 name:JPStatusUpdatedNotification
                                                object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self update];
+    [self reload:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,77 +55,47 @@
 
 - (void)update
 {
-    JPICloudStatus *status = [[JPICloudStatus alloc] init];
-    [status fetchStatus:^(NSDictionary *json, NSError *error) {
-        if (json) {
-            NSMutableDictionary *groups = [[NSMutableDictionary alloc] init];
-            NSMutableArray *groupNames = [[NSMutableArray alloc] init];
-            NSDictionary *dashboard = json[@"dashboard"];
-            for (NSString *group in [dashboard allKeys]) {
-                NSMutableArray *statuses = [[NSMutableArray alloc] init];
-                for (NSString *service in [dashboard[group] allKeys]) {
-                    NSArray *errors = dashboard[group][service];
-                    JPServiceStatus *status = [[JPServiceStatus alloc] init];
-                    status.service = service;
-                    if (errors.count > 0) {
-                        status.errors = errors;
-                    }
-                    [statuses addObject:status];
-                }
-
-                NSSortDescriptor *descriptor1 = [NSSortDescriptor sortDescriptorWithKey:@"errors" ascending:YES];
-                NSSortDescriptor *descriptor2 = [NSSortDescriptor sortDescriptorWithKey:@"service" ascending:YES];
-                [statuses sortUsingDescriptors:@[ descriptor1, descriptor2 ]];
-                groups[group] = statuses;
-                [groupNames addObject:group];
-            }
-            self.groups = groups;
-            self.groupNames = groupNames;
-        } else {
-            NSLog(@"Error: %@", error);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:@"Unable to retrieve iCloud status"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-            [alert show];
-            self.groups = nil;
-            self.groupNames = nil;
-        }
-        [self.refreshControl endRefreshing];
-        [self.tableView reloadData];
-
-        //find first issue and scroll to it
-        NSIndexPath *issue;
-        for (NSString *groupName in self.groupNames) {
-            for (int i=0; i<[self.groups[groupName] count]; i++) {
-                JPServiceStatus *status = self.groups[groupName][i];
-                if (status.errors) {
-                    issue = [NSIndexPath indexPathForRow:i inSection:[self.groupNames indexOfObject:groupName]];
-                    break;
-                }
-            }
-            if (issue) {
+    self.sections = [JPICloudStatus sharedICloudStatus].sections;
+    self.statuses = [JPICloudStatus sharedICloudStatus].statuses;
+    [self.refreshControl endRefreshing];
+    [self.tableView reloadData];
+    
+    //find first issue and scroll to it
+    NSIndexPath *issue;
+    for (int i = 0; i < [self.sections count]; i++) {
+        NSString *sectionName = self.sections[i];
+        for (int j = 0; j < [self.statuses[sectionName] count]; j++) {
+            JPServiceStatus *status = self.statuses[sectionName][j];
+            if (status.events) {
+                issue = [NSIndexPath indexPathForRow:j inSection:i];
                 break;
             }
         }
         if (issue) {
-            [self.tableView scrollToRowAtIndexPath:issue atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            break;
         }
-    }];
+    }
+    if (issue) {
+        [self.tableView scrollToRowAtIndexPath:issue atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+}
+
+- (IBAction)reload:(id)sender
+{
+    [[JPICloudStatus sharedICloudStatus] update];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.groups count];
+    return [self.sections count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSString *key = self.groupNames[section];
-    return [self.groups[key] count];
+    NSString *key = self.sections[section];
+    return [self.statuses[key] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,15 +103,16 @@
     static NSString *CellIdentifier = @"StatusCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
-    NSString *key = self.groupNames[indexPath.section];
+    NSString *key = self.sections[indexPath.section];
 
-    JPServiceStatus *status = self.groups[key][indexPath.row];
+    JPServiceStatus *status = self.statuses[key][indexPath.row];
     cell.textLabel.text = status.service;
     cell.imageView.contentMode = UIViewContentModeCenter;
-    if (status.errors.count > 0) {
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",
-                                     status.errors[0][@"statusType"],
-                                     status.errors[0][@"usersAffected"]];
+    if (status.events.count > 0) {
+        //TODO:
+//        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",
+//                                     status.events[0][@"statusType"],
+//                                     status.events[0][@"usersAffected"]];
         cell.imageView.image = [UIImage imageNamed:@"down.png"];
     } else {
         cell.detailTextLabel.text = nil;
@@ -156,7 +124,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return self.groupNames[section];
+    return self.sections[section];
 }
 
 @end

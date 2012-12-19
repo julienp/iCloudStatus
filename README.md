@@ -8,6 +8,4 @@ Released under the MIT License, see LICENSE.txt
 
 ## Todo ##
 
-Pull the JSON parsing out of the view controllers into JPICloudStatus, building proper model objects for the services and issues.
-
-DetailView for issues, selecting a row in one of the table views should take you to there.
+Selecting a row in one of the table views should take you to a detailview of the event
