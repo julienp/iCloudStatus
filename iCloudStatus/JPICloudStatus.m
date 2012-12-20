@@ -70,7 +70,7 @@ NSString * const JPStatusUpdatedNotification = @"JPStatusUpdatedNotification";
                 event.usersAffected = eventJson[@"usersAffected"];
                 event.statusType = eventJson[@"statusType"];
                 event.startDate = [dateFormatter dateFromString:eventJson[@"startDate"]];
-                if (eventJson[@"endDate"]) {
+                if (eventJson[@"endDate"] != [NSNull null]) {
                     event.endDate = [dateFormatter dateFromString:eventJson[@"endDate"]];
                 }
                 [events addObject:event];
