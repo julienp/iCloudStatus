@@ -8,6 +8,7 @@
 
 #import "JPICloudStatus.h"
 
+NSString * const JPStatusURL = @"http://www.apple.com/support/systemstatus/data/system_status_en_US.js";
 
 NSString * const JPStatusUpdatedNotification = @"JPStatusUpdatedNotification";
 
@@ -127,8 +128,7 @@ NSString * const JPStatusUpdatedNotification = @"JPStatusUpdatedNotification";
 - (void)fetchStatus:(void (^)(NSDictionary *json, NSError *error))completionBlock
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *urlString = @"http://www.apple.com/support/systemstatus/data/system_status_en_US.js";
-        NSURL *url = [NSURL URLWithString:urlString];
+        NSURL *url = [NSURL URLWithString:JPStatusURL];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20];
         NSURLResponse *response;
         NSError *error;
