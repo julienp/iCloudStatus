@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F9D753261681DBE500973EA3 /* status_error.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D753231681DB0700973EA3 /* status_error.json */; };
+		F9D7533116832A8700973EA3 /* JPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D7533016832A8700973EA3 /* JPDetailViewController.m */; };
 		F9DB0C05167B46E600E66EEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DB0C04167B46E600E66EEF /* UIKit.framework */; };
 		F9DB0C07167B46E600E66EEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DB0C06167B46E600E66EEF /* Foundation.framework */; };
 		F9DB0C09167B46E600E66EEF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DB0C08167B46E600E66EEF /* CoreGraphics.framework */; };
@@ -33,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		F9D753231681DB0700973EA3 /* status_error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = status_error.json; sourceTree = "<group>"; };
+		F9D7532F16832A8700973EA3 /* JPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPDetailViewController.h; sourceTree = "<group>"; };
+		F9D7533016832A8700973EA3 /* JPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPDetailViewController.m; sourceTree = "<group>"; };
 		F9DB0C00167B46E600E66EEF /* iCloudStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCloudStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DB0C04167B46E600E66EEF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F9DB0C06167B46E600E66EEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,13 +112,15 @@
 			children = (
 				F9DB0C13167B46E600E66EEF /* JPAppDelegate.h */,
 				F9DB0C14167B46E600E66EEF /* JPAppDelegate.m */,
-				F9DB0C1C167B46E700E66EEF /* MainStoryboard.storyboard */,
+				F9D7532F16832A8700973EA3 /* JPDetailViewController.h */,
+				F9D7533016832A8700973EA3 /* JPDetailViewController.m */,
+				F9DB0C27167B471900E66EEF /* JPICloudStatus.h */,
+				F9DB0C28167B471900E66EEF /* JPICloudStatus.m */,
 				F9DB0C32167B511A00E66EEF /* JPStatusViewController.h */,
 				F9DB0C33167B511A00E66EEF /* JPStatusViewController.m */,
 				F9DB0C44167B65E000E66EEF /* JPTimelineViewController.h */,
 				F9DB0C45167B65E000E66EEF /* JPTimelineViewController.m */,
-				F9DB0C27167B471900E66EEF /* JPICloudStatus.h */,
-				F9DB0C28167B471900E66EEF /* JPICloudStatus.m */,
+				F9DB0C1C167B46E700E66EEF /* MainStoryboard.storyboard */,
 				F9DB0C0B167B46E600E66EEF /* Supporting Files */,
 			);
 			path = iCloudStatus;
@@ -233,6 +238,7 @@
 				F9DB0C29167B471900E66EEF /* JPICloudStatus.m in Sources */,
 				F9DB0C34167B511A00E66EEF /* JPStatusViewController.m in Sources */,
 				F9DB0C46167B65E000E66EEF /* JPTimelineViewController.m in Sources */,
+				F9D7533116832A8700973EA3 /* JPDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

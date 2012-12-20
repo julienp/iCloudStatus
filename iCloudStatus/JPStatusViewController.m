@@ -8,7 +8,7 @@
 
 #import "JPStatusViewController.h"
 #import "JPICloudStatus.h"
-
+#import "JPDetailViewController.h"
 
 @interface JPStatusViewController ()
 @property (nonatomic, strong) NSDictionary *statuses;
@@ -103,16 +103,13 @@
     static NSString *CellIdentifier = @"StatusCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
-    NSString *key = self.sections[indexPath.section];
-
-    JPServiceStatus *status = self.statuses[key][indexPath.row];
+    NSString *section = self.sections[indexPath.section];
+    JPServiceStatus *status = self.statuses[section][indexPath.row];
     cell.textLabel.text = status.service;
     cell.imageView.contentMode = UIViewContentModeCenter;
-    if (status.events.count > 0) {
-        //TODO:
-//        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",
-//                                     status.events[0][@"statusType"],
-//                                     status.events[0][@"usersAffected"]];
+    if ([status.events count] > 0) {
+        NSArray *messages = [status.events valueForKeyPath:@"message"];
+        cell.detailTextLabel.text = [messages componentsJoinedByString:@", "];
         cell.imageView.image = [UIImage imageNamed:@"down.png"];
     } else {
         cell.detailTextLabel.text = nil;
@@ -125,6 +122,19 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return self.sections[section];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    JPDetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"JPDetailViewController"];
+    NSString *section = self.sections[indexPath.section];
+    JPServiceStatus *status = self.statuses[section][indexPath.row];
+    if ([status.events count] > 0) {
+        detail.event = status.events[0]; //TODO: can there be multiple events?
+        [self.navigationController pushViewController:detail animated:YES];
+    } else {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
 
 @end

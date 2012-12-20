@@ -8,7 +8,7 @@
 
 #import "JPTimelineViewController.h"
 #import "JPICloudStatus.h"
-
+#import "JPDetailViewController.h"
 
 @interface JPTimelineViewController ()
 @property (nonatomic, strong) NSArray *events;
@@ -86,6 +86,13 @@
     cell.detailTextLabel.text = event.message;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    JPDetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"JPDetailViewController"];
+    detail.event = self.events[indexPath.row];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 @end
