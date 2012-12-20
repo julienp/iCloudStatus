@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F916A28316834F5500B9758D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F916A28216834F5500B9758D /* icon@2x.png */; };
 		F916A28616834F5A00B9758D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F916A28516834F5A00B9758D /* icon.png */; };
+		F916A2891683522700B9758D /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F916A2871683522700B9758D /* down@2x.png */; };
+		F916A28A1683522700B9758D /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F916A2881683522700B9758D /* up@2x.png */; };
 		F9D753261681DBE500973EA3 /* status_error.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D753231681DB0700973EA3 /* status_error.json */; };
 		F9D7533116832A8700973EA3 /* JPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D7533016832A8700973EA3 /* JPDetailViewController.m */; };
 		F9DB0C05167B46E600E66EEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DB0C04167B46E600E66EEF /* UIKit.framework */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		F916A28216834F5500B9758D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		F916A28516834F5A00B9758D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		F916A2871683522700B9758D /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down@2x.png"; sourceTree = "<group>"; };
+		F916A2881683522700B9758D /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up@2x.png"; sourceTree = "<group>"; };
 		F9D753231681DB0700973EA3 /* status_error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = status_error.json; sourceTree = "<group>"; };
 		F9D7532F16832A8700973EA3 /* JPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPDetailViewController.h; sourceTree = "<group>"; };
 		F9D7533016832A8700973EA3 /* JPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPDetailViewController.m; sourceTree = "<group>"; };
@@ -148,14 +152,16 @@
 		F9DB0C3B167B64CE00E66EEF /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				F916A28516834F5A00B9758D /* icon.png */,
-				F916A28216834F5500B9758D /* icon@2x.png */,
-				F9DB0C2E167B4F2300E66EEF /* down.png */,
-				F9DB0C2F167B4F2300E66EEF /* up.png */,
-				F9DB0C3C167B64E100E66EEF /* 234-cloud.png */,
-				F9DB0C3D167B64E100E66EEF /* 234-cloud@2x.png */,
 				F9DB0C40167B651300E66EEF /* 11-clock.png */,
 				F9DB0C41167B651300E66EEF /* 11-clock@2x.png */,
+				F9DB0C3C167B64E100E66EEF /* 234-cloud.png */,
+				F9DB0C3D167B64E100E66EEF /* 234-cloud@2x.png */,
+				F9DB0C2E167B4F2300E66EEF /* down.png */,
+				F916A2871683522700B9758D /* down@2x.png */,
+				F916A28516834F5A00B9758D /* icon.png */,
+				F916A28216834F5500B9758D /* icon@2x.png */,
+				F9DB0C2F167B4F2300E66EEF /* up.png */,
+				F916A2881683522700B9758D /* up@2x.png */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -227,6 +233,8 @@
 				F9DB0C43167B651300E66EEF /* 11-clock@2x.png in Resources */,
 				F916A28316834F5500B9758D /* icon@2x.png in Resources */,
 				F916A28616834F5A00B9758D /* icon.png in Resources */,
+				F916A2891683522700B9758D /* down@2x.png in Resources */,
+				F916A28A1683522700B9758D /* up@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

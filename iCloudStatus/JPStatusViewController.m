@@ -111,9 +111,11 @@
         NSArray *messages = [status.events valueForKeyPath:@"message"];
         cell.detailTextLabel.text = [messages componentsJoinedByString:@", "];
         cell.imageView.image = [UIImage imageNamed:@"down.png"];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         cell.detailTextLabel.text = nil;
         cell.imageView.image = [UIImage imageNamed:@"up.png"];
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
 
     return cell;
