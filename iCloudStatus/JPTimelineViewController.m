@@ -83,7 +83,13 @@
 
     JPEvent *event = self.events[indexPath.row];
     cell.textLabel.text = event.title;
-    cell.detailTextLabel.text = event.message;
+    static NSDateFormatter *formatter;
+    if (formatter == nil) {
+        formatter = [[NSDateFormatter alloc] init];
+        formatter.timeStyle = NSDateFormatterShortStyle;
+        formatter.dateStyle = NSDateFormatterShortStyle;
+    }
+    cell.detailTextLabel.text = [formatter stringFromDate:event.startDate];
     
     return cell;
 }

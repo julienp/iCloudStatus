@@ -115,7 +115,7 @@
                                     <constraint firstAttribute="height" constant="27" id="cy1-vx-8lU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Done">
+                                <state key="normal" title="Back">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -260,7 +260,6 @@
         <class className="JPDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JPDetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="pop:"/>
                 <relationship kind="outlet" name="endDateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="messageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="startDateLabel" candidateClass="UILabel"/>
@@ -270,9 +269,6 @@
         </class>
         <class className="JPStatusViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JPStatusViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="reload:"/>
-            </relationships>
         </class>
         <class className="JPTimelineViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JPTimelineViewController.h"/>

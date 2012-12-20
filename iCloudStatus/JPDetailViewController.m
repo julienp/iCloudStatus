@@ -40,7 +40,7 @@
     self.usersLabel.text = self.event.usersAffected;
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.timeStyle = NSDateFormatterMediumStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
     formatter.dateStyle = NSDateFormatterMediumStyle;
 
     self.startDateLabel.text = [formatter stringFromDate:self.event.startDate];
