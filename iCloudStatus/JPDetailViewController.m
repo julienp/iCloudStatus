@@ -43,7 +43,11 @@
     formatter.timeStyle = NSDateFormatterShortStyle;
     formatter.dateStyle = NSDateFormatterMediumStyle;
 
-    self.startDateLabel.text = [formatter stringFromDate:self.event.startDate];
+    if (self.event.startDate) {
+        self.startDateLabel.text = [formatter stringFromDate:self.event.startDate];
+    } else {
+        self.startDateLabel.text = @" - ";
+    }
     if (self.event.endDate) {
         self.endDateLabel.text = [formatter stringFromDate:self.event.endDate];
     } else {
