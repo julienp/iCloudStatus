@@ -37,7 +37,11 @@
     [super viewWillAppear:animated];
     self.titleLabel.text = self.event.title;
     self.messageLabel.text = self.event.message;
-    self.usersLabel.text = self.event.usersAffected;
+    if (![[NSNull null] isEqual:self.event.usersAffected]) {
+        self.usersLabel.text = self.event.usersAffected;
+    } else {
+        self.usersLabel.text = @"";
+    }
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.timeStyle = NSDateFormatterShortStyle;
