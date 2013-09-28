@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F916A28316834F5500B9758D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F916A28216834F5500B9758D /* icon@2x.png */; };
-		F916A28616834F5A00B9758D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F916A28516834F5A00B9758D /* icon.png */; };
-		F916A2891683522700B9758D /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F916A2871683522700B9758D /* down@2x.png */; };
-		F916A28A1683522700B9758D /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F916A2881683522700B9758D /* up@2x.png */; };
+		F9017AEF17F715C000291B0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9017AEE17F715C000291B0D /* Images.xcassets */; };
 		F9D753261681DBE500973EA3 /* status_error.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D753231681DB0700973EA3 /* status_error.json */; };
 		F9D7533116832A8700973EA3 /* JPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D7533016832A8700973EA3 /* JPDetailViewController.m */; };
 		F9DB0C05167B46E600E66EEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DB0C04167B46E600E66EEF /* UIKit.framework */; };
@@ -19,27 +16,15 @@
 		F9DB0C0F167B46E600E66EEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C0D167B46E600E66EEF /* InfoPlist.strings */; };
 		F9DB0C11167B46E600E66EEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0C10167B46E600E66EEF /* main.m */; };
 		F9DB0C15167B46E600E66EEF /* JPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0C14167B46E600E66EEF /* JPAppDelegate.m */; };
-		F9DB0C17167B46E700E66EEF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C16167B46E700E66EEF /* Default.png */; };
-		F9DB0C19167B46E700E66EEF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C18167B46E700E66EEF /* Default@2x.png */; };
-		F9DB0C1B167B46E700E66EEF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C1A167B46E700E66EEF /* Default-568h@2x.png */; };
 		F9DB0C1E167B46E700E66EEF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C1C167B46E700E66EEF /* MainStoryboard.storyboard */; };
 		F9DB0C29167B471900E66EEF /* JPICloudStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0C28167B471900E66EEF /* JPICloudStatus.m */; };
-		F9DB0C30167B4F2300E66EEF /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C2E167B4F2300E66EEF /* down.png */; };
-		F9DB0C31167B4F2300E66EEF /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C2F167B4F2300E66EEF /* up.png */; };
 		F9DB0C34167B511A00E66EEF /* JPStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0C33167B511A00E66EEF /* JPStatusViewController.m */; };
 		F9DB0C36167B5F4300E66EEF /* status.json in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C35167B5F4300E66EEF /* status.json */; };
-		F9DB0C3E167B64E100E66EEF /* 234-cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C3C167B64E100E66EEF /* 234-cloud.png */; };
-		F9DB0C3F167B64E100E66EEF /* 234-cloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C3D167B64E100E66EEF /* 234-cloud@2x.png */; };
-		F9DB0C42167B651300E66EEF /* 11-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C40167B651300E66EEF /* 11-clock.png */; };
-		F9DB0C43167B651300E66EEF /* 11-clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB0C41167B651300E66EEF /* 11-clock@2x.png */; };
 		F9DB0C46167B65E000E66EEF /* JPTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0C45167B65E000E66EEF /* JPTimelineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F916A28216834F5500B9758D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
-		F916A28516834F5A00B9758D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
-		F916A2871683522700B9758D /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down@2x.png"; sourceTree = "<group>"; };
-		F916A2881683522700B9758D /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up@2x.png"; sourceTree = "<group>"; };
+		F9017AEE17F715C000291B0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F9D753231681DB0700973EA3 /* status_error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = status_error.json; sourceTree = "<group>"; };
 		F9D7532F16832A8700973EA3 /* JPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPDetailViewController.h; sourceTree = "<group>"; };
 		F9D7533016832A8700973EA3 /* JPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPDetailViewController.m; sourceTree = "<group>"; };
@@ -53,21 +38,12 @@
 		F9DB0C12167B46E600E66EEF /* iCloudStatus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCloudStatus-Prefix.pch"; sourceTree = "<group>"; };
 		F9DB0C13167B46E600E66EEF /* JPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPAppDelegate.h; sourceTree = "<group>"; };
 		F9DB0C14167B46E600E66EEF /* JPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPAppDelegate.m; sourceTree = "<group>"; };
-		F9DB0C16167B46E700E66EEF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		F9DB0C18167B46E700E66EEF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		F9DB0C1A167B46E700E66EEF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F9DB0C1D167B46E700E66EEF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F9DB0C27167B471900E66EEF /* JPICloudStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPICloudStatus.h; sourceTree = "<group>"; };
 		F9DB0C28167B471900E66EEF /* JPICloudStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPICloudStatus.m; sourceTree = "<group>"; };
-		F9DB0C2E167B4F2300E66EEF /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
-		F9DB0C2F167B4F2300E66EEF /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
 		F9DB0C32167B511A00E66EEF /* JPStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPStatusViewController.h; sourceTree = "<group>"; };
 		F9DB0C33167B511A00E66EEF /* JPStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPStatusViewController.m; sourceTree = "<group>"; };
 		F9DB0C35167B5F4300E66EEF /* status.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = status.json; sourceTree = "<group>"; };
-		F9DB0C3C167B64E100E66EEF /* 234-cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "234-cloud.png"; sourceTree = "<group>"; };
-		F9DB0C3D167B64E100E66EEF /* 234-cloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "234-cloud@2x.png"; sourceTree = "<group>"; };
-		F9DB0C40167B651300E66EEF /* 11-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock.png"; sourceTree = "<group>"; };
-		F9DB0C41167B651300E66EEF /* 11-clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock@2x.png"; sourceTree = "<group>"; };
 		F9DB0C44167B65E000E66EEF /* JPTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTimelineViewController.h; sourceTree = "<group>"; };
 		F9DB0C45167B65E000E66EEF /* JPTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTimelineViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +103,7 @@
 				F9DB0C44167B65E000E66EEF /* JPTimelineViewController.h */,
 				F9DB0C45167B65E000E66EEF /* JPTimelineViewController.m */,
 				F9DB0C1C167B46E700E66EEF /* MainStoryboard.storyboard */,
+				F9017AEE17F715C000291B0D /* Images.xcassets */,
 				F9DB0C0B167B46E600E66EEF /* Supporting Files */,
 			);
 			path = iCloudStatus;
@@ -135,35 +112,14 @@
 		F9DB0C0B167B46E600E66EEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F9DB0C3B167B64CE00E66EEF /* icons */,
 				F9DB0C35167B5F4300E66EEF /* status.json */,
 				F9D753231681DB0700973EA3 /* status_error.json */,
 				F9DB0C0C167B46E600E66EEF /* iCloudStatus-Info.plist */,
 				F9DB0C0D167B46E600E66EEF /* InfoPlist.strings */,
 				F9DB0C10167B46E600E66EEF /* main.m */,
 				F9DB0C12167B46E600E66EEF /* iCloudStatus-Prefix.pch */,
-				F9DB0C16167B46E700E66EEF /* Default.png */,
-				F9DB0C18167B46E700E66EEF /* Default@2x.png */,
-				F9DB0C1A167B46E700E66EEF /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F9DB0C3B167B64CE00E66EEF /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				F9DB0C40167B651300E66EEF /* 11-clock.png */,
-				F9DB0C41167B651300E66EEF /* 11-clock@2x.png */,
-				F9DB0C3C167B64E100E66EEF /* 234-cloud.png */,
-				F9DB0C3D167B64E100E66EEF /* 234-cloud@2x.png */,
-				F9DB0C2E167B4F2300E66EEF /* down.png */,
-				F916A2871683522700B9758D /* down@2x.png */,
-				F916A28516834F5A00B9758D /* icon.png */,
-				F916A28216834F5500B9758D /* icon@2x.png */,
-				F9DB0C2F167B4F2300E66EEF /* up.png */,
-				F916A2881683522700B9758D /* up@2x.png */,
-			);
-			name = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,22 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9DB0C0F167B46E600E66EEF /* InfoPlist.strings in Resources */,
-				F9DB0C17167B46E700E66EEF /* Default.png in Resources */,
-				F9DB0C19167B46E700E66EEF /* Default@2x.png in Resources */,
-				F9DB0C1B167B46E700E66EEF /* Default-568h@2x.png in Resources */,
 				F9DB0C1E167B46E700E66EEF /* MainStoryboard.storyboard in Resources */,
-				F9DB0C30167B4F2300E66EEF /* down.png in Resources */,
-				F9DB0C31167B4F2300E66EEF /* up.png in Resources */,
 				F9DB0C36167B5F4300E66EEF /* status.json in Resources */,
 				F9D753261681DBE500973EA3 /* status_error.json in Resources */,
-				F9DB0C3E167B64E100E66EEF /* 234-cloud.png in Resources */,
-				F9DB0C3F167B64E100E66EEF /* 234-cloud@2x.png in Resources */,
-				F9DB0C42167B651300E66EEF /* 11-clock.png in Resources */,
-				F9DB0C43167B651300E66EEF /* 11-clock@2x.png in Resources */,
-				F916A28316834F5500B9758D /* icon@2x.png in Resources */,
-				F916A28616834F5A00B9758D /* icon.png in Resources */,
-				F916A2891683522700B9758D /* down@2x.png in Resources */,
-				F916A28A1683522700B9758D /* up@2x.png in Resources */,
+				F9017AEF17F715C000291B0D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,9 +273,12 @@
 		F9DB0C25167B46E700E66EEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCloudStatus/iCloudStatus-Prefix.pch";
 				INFOPLIST_FILE = "iCloudStatus/iCloudStatus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -340,9 +287,12 @@
 		F9DB0C26167B46E700E66EEF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCloudStatus/iCloudStatus-Prefix.pch";
 				INFOPLIST_FILE = "iCloudStatus/iCloudStatus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

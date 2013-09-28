@@ -110,11 +110,11 @@
     if ([status.events count] > 0) {
         NSArray *messages = [status.events valueForKeyPath:@"message"];
         cell.detailTextLabel.text = [messages componentsJoinedByString:@", "];
-        cell.imageView.image = [UIImage imageNamed:@"down.png"];
+        cell.imageView.image = [UIImage imageNamed:@"down"];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         cell.detailTextLabel.text = nil;
-        cell.imageView.image = [UIImage imageNamed:@"up.png"];
+        cell.imageView.image = [UIImage imageNamed:@"up"];
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
 
