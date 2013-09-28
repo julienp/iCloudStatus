@@ -151,6 +151,11 @@
 				CLASSPREFIX = JP;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Julien Poissonnier";
+				TargetAttributes = {
+					F9DB0BFF167B46E600E66EEF = {
+						DevelopmentTeam = HVLJ5Y2JLA;
+					};
+				};
 			};
 			buildConfigurationList = F9DB0BFA167B46E600E66EEF /* Build configuration list for PBXProject "iCloudStatus" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -275,6 +280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCloudStatus/iCloudStatus-Prefix.pch";
 				INFOPLIST_FILE = "iCloudStatus/iCloudStatus-Info.plist";
@@ -289,6 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCloudStatus/iCloudStatus-Prefix.pch";
 				INFOPLIST_FILE = "iCloudStatus/iCloudStatus-Info.plist";
