@@ -1,6 +1,6 @@
 #iCloudStatus#
 
-![iCloudStatus](https://raw.github.com/julienp/iCloudStatus/master/icon@2x.png)
+![iCloudStatus](https://raw.github.com/julienp/iCloudStatus/master/iCloudStatus/Images.xcassets/AppIcon.appiconset/icon@2x.png)
 
 Simple app that grabs the current status of Apple Services, Stores, and iCloud from http://www.apple.com/support/systemstatus/
 
